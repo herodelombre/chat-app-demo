@@ -1,0 +1,28 @@
+[env]
+_.file = '.env'
+
+_.path = ['{{config_root}}/node_modules/.bin']
+
+# Use the project name derived from the current directory
+PROJECT_NAME = "{{ config_root | basename }}"
+
+# Set up the path for node module binaries
+BIN_PATH = "{{ config_root }}/node_modules/.bin"
+
+NODE_ENV = "{{ env.NODE_ENV | default(value='development') }}"
+
+[tools]
+# Install Node.js using the specified version
+node = "22.20.0"
+
+# Install some npm packages globally if needed
+"npm:typescript" = "5.9.3"
+"npm:eslint" = "9.37.0"
+"npm:serve" = "14.2.5"
+
+[tasks.info]
+description = "Print project information"
+run = '''
+echo "Project: $PROJECT_NAME"
+echo "NODE_ENV: $NODE_ENV"
+'''

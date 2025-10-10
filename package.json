@@ -1,0 +1,39 @@
+{
+  "name": "chat-app-example",
+  "version": "1.0.0",
+  "description": "Demo chat application with React frontend and Node.js backend using polling",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "start": "node start-production.js",
+    "start:concurrent": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
+    "server:dev": "cd server && npm run dev",
+    "build": "cd client && npm run build",
+    "build:prod": "npm run build && npm run build:check",
+    "build:check": "node -e \"const fs=require('fs'),path=require('path');const buildPath=path.join(__dirname,'client','build');if(!fs.existsSync(buildPath)||!fs.existsSync(path.join(buildPath,'index.html'))){console.error('❌ Frontend build failed or incomplete');process.exit(1);}console.log('✅ Frontend build verified');\"",
+    "prebuild": "echo '🔨 Building frontend for production...'",
+    "postbuild": "echo '✅ Frontend build completed'",
+    "prod": "node start-production.js",
+    "test": "cd client && npm test",
+    "test-setup": "node test-setup.js"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "keywords": [
+    "chat",
+    "react",
+    "nodejs",
+    "express",
+    "polling",
+    "demo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
