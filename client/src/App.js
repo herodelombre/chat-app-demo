@@ -111,7 +111,7 @@ function App() {
     fetchMessages();
 
     // Set up polling every 2 seconds
-    const interval = setInterval(fetchMessages, 60000);
+    const interval = setInterval(fetchMessages, 2000);
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);

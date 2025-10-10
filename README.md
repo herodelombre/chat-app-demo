@@ -2,15 +2,6 @@
 
 A simple demo chat application built with React frontend and Node.js backend, using polling for real-time updates instead of WebSocket connections. All data is stored in memory only (no database required).
 
-## Features
-
-- 📱 Minimal, responsive chat interface
-- 🔄 Real-time updates via HTTP polling (every 2 seconds)
-- 👤 Username-based messaging
-- 💾 In-memory storage (resets on server restart)
-- 🚀 Simple setup with no database dependencies
-- ⚡ Fast and lightweight
-
 ## Architecture
 
 - **Frontend**: React application running on port 3000
@@ -45,11 +36,13 @@ chat_app_example/
 ## Quick Start
 
 1. **Clone and navigate to the project directory**
+
    ```bash
    cd chat_app_example
    ```
 
 2. **Install all dependencies**
+
    ```bash
    npm run install-all
    ```
@@ -62,34 +55,40 @@ chat_app_example/
 This will start both the server (port 3001) and client (port 3000) concurrently.
 
 4. **Open your browser**
-   Navigate to `http://localhost:3000` to use the chat application.
+   Navigate to `http://localhost:3001` to use the chat application.
 
 ## Manual Setup
 
 If you prefer to run the server and client separately:
 
 ### Server Setup
+
 ```bash
 cd server
 npm install
 npm start
 ```
+
 Server will run on `http://localhost:3001`
 
 ### Client Setup
+
 ```bash
 cd client
 npm install
 npm start
 ```
+
 Client will run on `http://localhost:3000`
 
 ## API Endpoints
 
 ### GET /api/messages
+
 Retrieves all messages from memory.
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -105,9 +104,11 @@ Retrieves all messages from memory.
 ```
 
 ### POST /api/messages
+
 Sends a new message.
 
 **Request Body:**
+
 ```json
 {
   "username": "John",
@@ -116,6 +117,7 @@ Sends a new message.
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -129,9 +131,11 @@ Sends a new message.
 ```
 
 ### GET /api/health
+
 Health check endpoint.
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -182,6 +186,7 @@ The React frontend uses `setInterval` to fetch messages every 2 seconds:
 ### Development Mode
 
 For development with auto-reload:
+
 ```bash
 npm run dev
 ```
@@ -191,7 +196,9 @@ This runs the server with nodemon (auto-restarts on changes) and the React devel
 ## Customization
 
 ### Polling Interval
+
 To change the polling frequency, modify the interval in `client/src/App.js`:
+
 ```javascript
 // Current: polls every 2 seconds
 const interval = setInterval(fetchMessages, 2000);
@@ -201,7 +208,9 @@ const interval = setInterval(fetchMessages, 5000);
 ```
 
 ### Message Limit
+
 To change the message history limit, modify `server/server.js`:
+
 ```javascript
 // Current: keeps last 100 messages
 if (messages.length > 100) {
@@ -215,19 +224,24 @@ if (messages.length > 50) {
 ```
 
 ### Styling
+
 All styles are in `client/src/App.css` and can be customized as needed.
 
 ## Troubleshooting
 
 ### Port Already in Use
+
 If ports 3000 or 3001 are in use:
+
 - Change server port in `server/server.js`
 - Update proxy in `client/package.json`
 
 ### CORS Issues
+
 The server includes CORS middleware to allow cross-origin requests from the React app.
 
 ### Messages Not Updating
+
 - Check that both server and client are running
 - Verify the proxy setting in `client/package.json`
 - Check browser console for errors
