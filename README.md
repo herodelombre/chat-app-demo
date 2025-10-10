@@ -57,30 +57,6 @@ This will start both the server (port 3001) and client (port 3000) concurrently.
 4. **Open your browser**
    Navigate to `http://localhost:3001` to use the chat application.
 
-## Manual Setup
-
-If you prefer to run the server and client separately:
-
-### Server Setup
-
-```bash
-cd server
-npm install
-npm start
-```
-
-Server will run on `http://localhost:3001`
-
-### Client Setup
-
-```bash
-cd client
-npm install
-npm start
-```
-
-Client will run on `http://localhost:3000`
-
 ## API Endpoints
 
 ### GET /api/messages
@@ -154,97 +130,6 @@ The React frontend uses `setInterval` to fetch messages every 2 seconds:
 3. Continuously fetches messages in background
 4. Updates UI when new messages are detected
 5. Cleans up interval on component unmount
-
-## Usage
-
-1. **Enter your username** in the top input field
-2. **Type your message** in the bottom input field
-3. **Click "Send"** or press Enter to send the message
-4. **Watch messages appear** in real-time as others chat
-5. **Messages auto-scroll** to show the latest content
-
-## Limitations
-
-- **Memory only**: All messages are lost when server restarts
-- **No persistence**: No database or file storage
-- **Message limit**: Only keeps last 100 messages
-- **No authentication**: Anyone can use any username
-- **Polling delay**: 2-second delay for new messages
-- **Single room**: All users share the same chat room
-
-## Development
-
-### Available Scripts
-
-- `npm start` - Run both server and client
-- `npm run server` - Run server only
-- `npm run client` - Run client only
-- `npm run dev` - Run server with nodemon and client
-- `npm run install-all` - Install all dependencies
-- `npm run build` - Build client for production
-
-### Development Mode
-
-For development with auto-reload:
-
-```bash
-npm run dev
-```
-
-This runs the server with nodemon (auto-restarts on changes) and the React development server.
-
-## Customization
-
-### Polling Interval
-
-To change the polling frequency, modify the interval in `client/src/App.js`:
-
-```javascript
-// Current: polls every 2 seconds
-const interval = setInterval(fetchMessages, 2000);
-
-// Example: poll every 5 seconds
-const interval = setInterval(fetchMessages, 5000);
-```
-
-### Message Limit
-
-To change the message history limit, modify `server/server.js`:
-
-```javascript
-// Current: keeps last 100 messages
-if (messages.length > 100) {
-  messages = messages.slice(-100);
-}
-
-// Example: keep last 50 messages
-if (messages.length > 50) {
-  messages = messages.slice(-50);
-}
-```
-
-### Styling
-
-All styles are in `client/src/App.css` and can be customized as needed.
-
-## Troubleshooting
-
-### Port Already in Use
-
-If ports 3000 or 3001 are in use:
-
-- Change server port in `server/server.js`
-- Update proxy in `client/package.json`
-
-### CORS Issues
-
-The server includes CORS middleware to allow cross-origin requests from the React app.
-
-### Messages Not Updating
-
-- Check that both server and client are running
-- Verify the proxy setting in `client/package.json`
-- Check browser console for errors
 
 ## License
 
