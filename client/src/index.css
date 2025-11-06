@@ -19,10 +19,11 @@ code {
 
 html, body, #root {
   height: 100%;
-  background-color: red;
+  color: red;
 }
 
-.polka-dots {
+html {
+    background-color: red;
     --polka-dot-color: hsl(0, 0%, 100%, 15%);
     --polka-dot-size: 2px;
     --polka-dot-spacing: 50px;
