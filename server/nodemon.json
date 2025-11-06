@@ -1,0 +1,16 @@
+{
+  "watch": [
+    "server.js",
+    "*.js"
+  ],
+  "ext": "js,json",
+  "ignore": [
+    "node_modules/*",
+    "../client/*"
+  ],
+  "delay": "500",
+  "verbose": true,
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
