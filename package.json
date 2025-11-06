@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently --names \"SERVER,CLIENT\" --prefix-colors \"bgBlue.bold,bgMagenta.bold\" \"cd server && npm run dev\" \"cd client && npm start\"",
     "start": "npm run build:client && node start-production.js",
     "build:client": "cd client && npm run build",
     "prod": "node start-production.js"

@@ -47,15 +47,24 @@ chat_app_example/
    npm run install-all
    ```
 
-3. **Start the application**
+3. **Start the application in production mode**
+
    ```bash
    npm start
    ```
 
-This will start both the server (port 3001) and client (port 3000) concurrently.
+   This will build the client and serve everything from port 3001.
 
 4. **Open your browser**
    Navigate to `http://localhost:3001` to use the chat application.
+
+## Development with Hot Reload
+
+For development with automatic hot reloading:
+
+```bash
+npm run dev
+```
 
 ## API Endpoints
 
