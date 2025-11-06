@@ -106,11 +106,11 @@ app.get("*", (req, res) => {
 
 // Start server
 app.listen(PORT, "192.168.56.1", () => {
-  console.log(`🚀 Chat server is running on http://0.0.0.0:${PORT}`);
+  console.log(`🚀 Chat server is running on http://192.168.56.1:${PORT}`);
   console.log(`📦 Environment: ${NODE_ENV}`);
-  console.log(`🌐 Frontend: http://0.0.0.0:${PORT}/`);
-  console.log(`🔗 Health check: http://0.0.0.0:${PORT}/api/health`);
-  console.log(`💬 Messages endpoint: http://0.0.0.0:${PORT}/api/messages`);
+  console.log(`🌐 Frontend: http://192.168.56.1:${PORT}/`);
+  console.log(`🔗 Health check: http://192.168.56.1:${PORT}/api/health`);
+  console.log(`💬 Messages endpoint: http://192.168.56.1:${PORT}/api/messages`);
 
   if (NODE_ENV === "production") {
     console.log("✅ Production mode: Frontend bundled and served from backend");
