@@ -105,7 +105,7 @@ app.get("*", (req, res) => {
 });
 
 // Start server
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, "192.168.56.1", () => {
   console.log(`🚀 Chat server is running on http://0.0.0.0:${PORT}`);
   console.log(`📦 Environment: ${NODE_ENV}`);
   console.log(`🌐 Frontend: http://0.0.0.0:${PORT}/`);
