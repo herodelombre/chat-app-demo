@@ -20,6 +20,14 @@ code {
 html, body, #root {
   height: 100%;
   color: red;
+    --polka-dot-color: hsl(0, 0%, 100%, 15%);
+    --polka-dot-size: 2px;
+    --polka-dot-spacing: 50px;
+    --polka-dot-position: 0 0;
+
+    background-position: var(--polka-dot-position);
+    background-image: radial-gradient(var(--polka-dot-color) var(--polka-dot-size), transparent var(--polka-dot-size));
+    background-size: var(--polka-dot-spacing) var(--polka-dot-spacing);
 }
 
 html {
